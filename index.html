@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Яна - репетитор по математике, 7-11 класс, ОГЭ и ЕГЭ онлайн</title>
+<meta name="description" content="Онлайн-занятия по математике для 7-11 классов, подготовка к ОГЭ и ЕГЭ. Группа от 1000 ₽ в час, индивидуально от 1200 ₽ в час.">
+<style>
+@font-face{font-family:Manrope;src:url(fonts/manrope-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Golos Text";src:url(fonts/golos-text-400.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--bg:#f7f8fc;--bg-alt:#eceffa;--surface:#fff;--ink:#1a2038;--muted:#566079;--line:#dce1f0;--accent:#3345c9;--accent-ink:#fff;--accent-soft:#e4e8fb;--deep:#141a3d;--deep-ink:#eef0fb;
+--h:Manrope,system-ui,sans-serif;--b:"Golos Text",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 16px/1.55 var(--b);background:var(--bg);color:var(--ink);overflow-x:hidden}
+h1,h2,h3{font-family:var(--h);font-weight:700;line-height:1.15}
+h1{font-size:34px}h2{font-size:26px;margin-bottom:24px}h3{font-size:20px}
+a{color:var(--accent)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+section{padding:48px 0}
+.alt{background:var(--bg-alt)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:12px;font:700 16px var(--h);text-decoration:none;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+header{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
+.logo{font:700 20px var(--h);color:var(--ink);text-decoration:none}
+nav{display:none;gap:24px}nav a{color:var(--ink);text-decoration:none;padding:12px 0}
+header .btn{min-height:44px;padding:8px 16px}
+.hero{padding:48px 0;background-color:var(--bg);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px}
+.hero p{max-width:560px;margin:16px 0 24px;font-size:18px}
+.hero .price{display:inline-block;background:var(--accent-soft);padding:4px 12px;border-radius:12px;margin-bottom:16px;font-weight:400}
+.acts{display:flex;flex-direction:column;gap:12px}
+.grid{display:grid;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card ul{list-style:none;padding:0;margin-top:16px}
+.card li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line)}
+.card li b{font-family:var(--h)}
+.muted{color:var(--muted);font-size:14px}
+.about{display:grid;gap:24px}
+.photo{border-radius:16px;background:var(--accent-soft);aspect-ratio:4/5;overflow:hidden;max-width:480px}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.about ul{padding-left:20px;margin-top:12px}.about li{margin-bottom:8px}
+ol.steps{list-style:none;padding:0;display:grid;gap:16px;counter-reset:s}
+ol.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+ol.steps li:before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;margin-bottom:12px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:700 16px var(--h)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:8px}
+summary{cursor:pointer;padding:16px;min-height:48px;font-weight:700;font-family:var(--h)}
+details p{padding:0 16px 16px}
+.cta{background:var(--deep);color:var(--deep-ink)}
+.cta h2{color:var(--deep-ink)}
+form{display:grid;gap:16px;max-width:480px}
+label{display:grid;gap:4px;font-size:14px}
+input,select{font:400 16px var(--b);min-height:48px;padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%}
+.err{color:#ffb4b4;font-size:14px;min-height:0}
+.ck{display:flex;gap:12px;align-items:flex-start}.ck input{width:24px;min-height:24px;margin-top:2px;flex:none}
+.cta a{color:var(--deep-ink)}
+.hp{position:absolute;left:-9999px}
+#ok{display:none;background:var(--accent-soft);color:var(--ink);padding:16px;border-radius:12px;max-width:480px}
+footer{padding:32px 0 96px;font-size:14px}
+footer .wrap{display:grid;gap:16px}
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:9;display:none;gap:8px;padding:8px 16px;background:var(--surface);border-top:1px solid var(--line)}
+#bar.on{display:flex}#bar .btn{flex:1;min-height:48px;padding:8px}
+@media(min-width:768px){
+h1{font-size:54px}h2{font-size:36px}body{font-size:17px}
+.wrap{padding:0 32px}section{padding:72px 0}.hero{padding:88px 0}
+nav{display:flex}.acts{flex-direction:row}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+.about{grid-template-columns:1fr 1fr;align-items:center}
+footer{padding-bottom:32px}footer .wrap{grid-template-columns:1fr 1fr}
+#bar{display:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">Яна · математика</a>
+<nav><a href="#prices">Стоимость</a><a href="#about">Обо мне</a><a href="#how">Как записаться</a><a href="#faq">Вопросы</a></nav>
+<a class="btn" href="#form">Записаться</a>
+</div></header>
+
+<main id="top">
+<section class="hero" id="hero"><div class="wrap">
+<h1>Математика для 7-11 классов: ОГЭ и ЕГЭ онлайн</h1>
+<p>Занимаюсь с учениками индивидуально и в группе.</p>
+<span class="price muted">Занятие от 1000 ₽ в час</span>
+<div class="acts">
+<a class="btn" href="#form">Записаться на занятие</a>
+<a class="btn ghost" href="tel:+79827059002">Позвонить</a>
+</div>
+</div></section>
+
+<section id="prices"><div class="wrap">
+<h2>Стоимость занятий</h2>
+<div class="grid g2">
+<div class="card"><h3>В группе</h3><p class="muted">Занятия онлайн вместе с другими учениками</p>
+<ul><li><span>1 час</span><b>1000 ₽</b></li><li><span>1,5 часа</span><b>1500 ₽</b></li></ul></div>
+<div class="card"><h3>Индивидуально</h3><p class="muted">Занятия онлайн только с вами</p>
+<ul><li><span>1 час</span><b>1200 ₽</b></li><li><span>1,5 часа</span><b>1700 ₽</b></li></ul></div>
+</div></div></section>
+
+<section class="alt" id="about"><div class="wrap about">
+<div class="photo"><img src="yana.jpg" width="800" height="1000" alt="Яна, репетитор по математике" onerror="this.remove()"></div>
+<div>
+<h2>Обо мне</h2>
+<p>Меня зовут Яна. Я репетитор по математике: готовлю учеников 7-11 классов к ОГЭ и ЕГЭ.</p>
+<ul>
+<li>Опыт преподавания: 4 года.</li>
+<li>Результаты учеников: от 90 баллов.</li>
+<li>Бакалавриат УрФУ имени первого Президента России Б. Н. Ельцина, «Автоматизация технологических процессов и производств», 2022-2026.</li>
+<li>Магистратура УрФУ, «Человеко-машинное взаимодействие в информационных системах», 2026-2028.</li>
+</ul></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2>Как записаться</h2>
+<ol class="steps grid g3">
+<li><h3>Оставьте заявку</h3><p>Укажите имя, телефон и класс или экзамен.</p></li>
+<li><h3>Я свяжусь с вами</h3><p>Позвоню или напишу в Telegram, отвечу на вопросы.</p></li>
+<li><h3>Договоримся о занятиях</h3><p>Выберем формат, группу или индивидуально, и удобное время.</p></li>
+</ol></div></section>
+
+<section class="alt" id="faq"><div class="wrap">
+<h2>Частые вопросы</h2>
+<details name="faq"><summary>Для каких классов занятия?</summary><p>Для 7-11 классов, включая подготовку к ОГЭ и ЕГЭ.</p></details>
+<details name="faq"><summary>Где проходят занятия?</summary><p>Онлайн.</p></details>
+<details name="faq"><summary>Чем отличаются группа и индивидуальные занятия?</summary><p>В группе вы занимаетесь вместе с другими учениками, это дешевле. Индивидуально я работаю только с вами.</p></details>
+<details name="faq"><summary>Сколько длится занятие и сколько стоит?</summary><p>Занятие длится 1 или 1,5 часа. В группе: 1000 и 1500 ₽. Индивидуально: 1200 и 1700 ₽.</p></details>
+</div></section>
+
+<section class="cta" id="form"><div class="wrap">
+<h2>Записаться на занятие</h2>
+<form id="f" novalidate>
+<label>Имя<input name="name" autocomplete="name" required><span class="err" data-for="name"></span></label>
+<label>Телефон<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required><span class="err" data-for="phone"></span></label>
+<label>Класс или экзамен<select name="goal" required><option value="">Выберите</option><option>7-9 класс</option><option>ОГЭ</option><option>10-11 класс</option><option>ЕГЭ</option></select><span class="err" data-for="goal"></span></label>
+<input class="hp" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div><label class="ck"><input type="checkbox" name="consent"><span>Согласен на обработку персональных данных по <a href="privacy.html">политике конфиденциальности</a></span></label><span class="err" data-for="consent"></span></div>
+<button class="btn" type="submit">Записаться на занятие</button>
+<span class="err" id="ferr" role="alert"></span>
+</form>
+<p id="ok" role="status">Заявка принята. Яна свяжется с вами по указанному телефону.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div><b>Яна, репетитор по математике</b><br>Онлайн, 7-11 класс, ОГЭ и ЕГЭ</div>
+<div><a href="tel:+79827059002">+7 982 705-90-02</a><br><a href="https://t.me/avokivony">Telegram @avokivony</a><br><a href="privacy.html">Политика конфиденциальности</a></div>
+</div></footer>
+
+<div id="bar"><a class="btn ghost" href="tel:+79827059002">Позвонить</a><a class="btn" href="#form">Записаться</a></div>
+
+<script>
+const ENDPOINT="https://script.google.com/macros/s/AKfycbz4G7I1_lTuBD2xvKyTtiUJwtmea-Yt7hcyjKeuIPZlA9Fs50tvmOfPKvBm-FBFtdCzUg/exec";
+const f=document.getElementById("f"),bar=document.getElementById("bar");
+new IntersectionObserver(e=>bar.classList.toggle("on",!e[0].isIntersecting)).observe(document.getElementById("hero"));
+const ph=f.phone;
+let prev=0;
+ph.addEventListener("input",e=>{let d=ph.value.replace(/\D/g,"");
+if(e.inputType&&e.inputType.indexOf("delete")===0&&d.length>=prev)d=d.slice(0,-1);
+if(d[0]==="8")d="7"+d.slice(1);if(d&&d[0]!=="7")d="7"+d;d=d.slice(0,11);
+let s=d?"+7":"";if(d.length>1)s+=" ("+d.slice(1,4);if(d.length>4)s+=") "+d.slice(4,7);if(d.length>7)s+="-"+d.slice(7,9);if(d.length>9)s+="-"+d.slice(9,11);
+ph.value=s;prev=d.length});
+function setErr(n,m){f.querySelector('[data-for="'+n+'"]').textContent=m}
+f.addEventListener("submit",async e=>{e.preventDefault();
+["name","phone","goal","consent"].forEach(n=>setErr(n,""));document.getElementById("ferr").textContent="";
+let bad=0;
+if(!f.name.value.trim()){setErr("name","Укажите имя");bad=1}
+if(ph.value.replace(/\D/g,"").length!==11){setErr("phone","Введите телефон полностью");bad=1}
+if(!f.goal.value){setErr("goal","Выберите класс или экзамен");bad=1}
+if(!f.consent.checked){setErr("consent","Нужно согласие на обработку данных");bad=1}
+if(bad||f.site.value)return;
+const b=f.querySelector("button");b.disabled=true;b.textContent="Отправляем...";
+try{
+if(ENDPOINT.indexOf("http")!==0)throw 0;
+await fetch(ENDPOINT,{method:"POST",mode:"no-cors",body:new URLSearchParams({name:f.name.value.trim(),phone:ph.value,goal:f.goal.value,source:location.href})});
+f.style.display="none";document.getElementById("ok").style.display="block";
+}catch(x){document.getElementById("ferr").textContent="Не отправилось. Проверьте сеть и попробуйте ещё раз или позвоните +7 982 705-90-02.";b.disabled=false;b.textContent="Записаться на занятие"}
+});
+</script>
+</body>
+</html>
